@@ -1,0 +1,143 @@
+<div class="col-sm-15 m-5">
+    <div class="card">
+        <div class="card-header">
+            <strong>Información del curso </strong>
+        </div>
+        <div class="card-body">
+
+          <div class="container col-md-12 mt-5">
+
+            <div class="form-row">
+              <!-- Text input-->
+              <div class="form-group col-md-6">
+                <label class="col-md-4 control-label" for="Nombre del Curso"><b>Nombre del Curso</b></label>
+                <div class="col-md-6">
+                <input id="Nombre del Curso" name="Nombre del Curso" type="text" placeholder="" class="form-control input-md">
+
+                </div>
+              </div>
+
+              <!-- Text input-->
+              <div class="form-group col-md-6">
+                <label class="col-md-4 control-label" for="imagen"><b>Imagen</b></label>
+                <div class="col-md-10">
+                <input id="imagen" name="imagen" type="text" placeholder="" class="form-control input-md">
+
+                </div>
+              </div>
+            </div>
+            <!-- Form Name -->
+
+
+
+
+            <!-- Textarea -->
+            <div class="form-group">
+              <label class="col-md-11 control-label" for="descripción"><b>Descripción</b></label>
+              <div class="col-md-11">
+                <textarea class="form-control" id="descripción" name="descripción"></textarea>
+              </div>
+            </div>
+          <div class="form-row">
+            <!-- Select Basic -->
+            <div class="form-group col-md-6">
+              <label class="col-md-5 control-label" for="aula"><b>Aula</b></label>
+              <div class="col-md-5">
+                <select id="aula" name="aula" class="form-control">
+                  <option value="1">Aula Magna</option>
+                  <option value="2">Auditorio</option>
+                  <option value="3">Laboratorio 3</option>
+                  <option value="4">Aula 102 - Pabellón Nuevo</option>
+                  <option value="5">Aula 209 - Pabellón Antiguo</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Select Basic -->
+            <div class="form-group col-md-6">
+              <label class="col-md-6 control-label" for="Expositor"><b>Expositor</b></label>
+              <div class="col-md-6">
+                <select id="Expositor" name="Expositor" class="form-control">
+                  <option value="1">Figueredo Girao, Giancarlos</option>
+                  <option value="2">Huaccha Diaz, Harold</option>
+                  <option value="3">Muñico Calderón, Erik</option>
+                  <option value="4">Sotelo Quiroz, Tic</option>
+                  <option value="5">Vega Huerta, Hugo</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <!-- Multiple Checkboxes (inline) -->
+            <div class="form-group col-md-6">
+              <label class="col-md-5 control-label" for="Días"><b>Días que se dicta</b></label>
+              <div class="col-md-30">
+                <label class="checkbox-inline" for="Días-0" style="margin: 10px">
+                  <input type="checkbox" name="Días" id="Días-0" value="Lunes">
+                  Lunes
+                </label>
+                <label class="checkbox-inline" for="Días-1" style="margin: 10px">
+                  <input type="checkbox" name="Días" id="Días-1" value="Martes">
+                  Martes
+                </label>
+                <label class="checkbox-inline" for="Días-2" style="margin: 10px">
+                  <input type="checkbox" name="Días" id="Días-2" value="Miércoles">
+                  Miércoles
+                </label>
+                <label class="checkbox-inline" for="Días-3" style="margin: 10px">
+                  <input type="checkbox" name="Días" id="Días-3" value="Jueves">
+                  Jueves
+                </label>
+                <label class="checkbox-inline" for="Días-4" style="margin: 10px">
+                  <input type="checkbox" name="Días" id="Días-4" value="Viernes">
+                  Viernes
+                </label>
+                <label class="checkbox-inline" for="Días-5" style="margin: 10px">
+                  <input type="checkbox" name="Días" id="Días-5" value="Sábado">
+                  Sábado
+                </label>
+              </div>
+            </div>
+            </div>
+            <div class="form-group row">
+                    <div class="col-md-4 fecha-inicio-container">
+                        <label for="fecha_inicio">Fecha inicio</label>
+                        <input type="text" name="fecha_inicio" id="fecha_inicio" class="form-control&#x20;span12&#x20;datepicker" data-date-format="dd-mm-yyyy" style="text-align&#x3A;left" required="required" value="24-02-2020">                    </div>
+                    <div class=" col-md-4 col-lg-3 ">
+                        <label for="fecha_fin" >Fecha fin</label>
+                        <input type="text" name="fecha_fin" id="fecha_fin" class="form-control&#x20;span12&#x20;datepicker" data-date-format="dd-mm-yyyy" style="text-align&#x3A;left" required="required" value="24-02-2020">                    </div>
+                    <div class=" col-md-4 organizador-container">
+                        <label for="organizador" >Horas Efectivas</label>
+                        <input type="text" name="horas_efectivas" id="horas_efectivas" class="form-control" value="">                    </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="Horario"><b>Horario</b></label>
+              <div class="col-md-4">
+              <input id="Horario" name="Horario" type="text" placeholder="" class="form-control input-md">
+
+              </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="Costo"><b>Costo</b></label>
+              <div class="col-md-4">
+              <input id="Costo" name="Costo" type="text" placeholder="" class="form-control input-md">
+
+              </div>
+            </div>
+
+            <div class="form-group">
+                  <button class="btn btn-primary" [disabled]="contacto.invalid" (click)="guardarEvento()">
+                    Aceptar
+                  </button>
+            </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>
