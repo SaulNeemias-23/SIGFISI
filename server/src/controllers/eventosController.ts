@@ -77,6 +77,12 @@ class EventosController {
         const eventos = await db.query('SELECT id_evento, titulo, descripcion, imagen, categoria, e.nom_expositor, e.ape_expositor, fecha_inicio, lugar, estado, e.id_solicitud FROM eventos e INNER JOIN aulas a ON a.id_aula = e.id_aula INNER JOIN conferencias c on e.id_conferencia = c.id_conferencia INNER JOIN solicitudes s ON e.id_solicitud = s.id_solicitud WHERE estado = "proceso"');
         res.json(eventos);
     }
+
+    public async actualizarEvento(req: Request, res: Response): Promise<void>{
+        const {id} = req.params;
+        const eventos = await db.query('UPDATE evento set ? WHERE  id=?', [id]);
+        res.json({message: 'El evento fue actualizado'});
+    }
     
 }
 

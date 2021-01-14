@@ -21,7 +21,7 @@ class EventosRoutes{
         this.router.put('/aprobar/:id', eventosController.aprobar);       
         this.router.put('/desaprobar/:id', eventosController.desaprobar);
         this.router.delete('/:id', eventosController.delete);         
-             
+        this.router.put('/',eventosController.actualizarEvento);
             
     }
 }

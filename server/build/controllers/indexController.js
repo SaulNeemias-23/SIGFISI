@@ -1,12 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var IndexController = /** @class */ (function () {
-    function IndexController() {
-    }
-    IndexController.prototype.index = function (req, res) {
+exports.indexController = void 0;
+class IndexController {
+    index(req, res) {
         res.send('Hello');
-    };
-    return IndexController;
-}());
+    }
+}
 exports.indexController = new IndexController();
 //# sourceMappingURL=indexController.js.map

@@ -20,6 +20,7 @@ import { LoginComponent } from './components/login/login.component';
 import { TipoeventoComponent } from './components/tipoevento/tipoevento.component';
 import { CursoComponent } from './components/curso/curso.component';
 import { TallerComponent } from './components/taller/taller.component';
+import { PruebaComponent } from './components/prueba/prueba.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { TallerComponent } from './components/taller/taller.component';
     LoginComponent,
     TipoeventoComponent,
     CursoComponent,
-    TallerComponent
+    TallerComponent,
+    PruebaComponent
   ],
   imports: [
     BrowserModule,

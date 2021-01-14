@@ -4,7 +4,7 @@ exports.default = {
     database: {
         host: 'localhost',
         user: 'root',
-        password: '', //contraseña de tu usuario root 
+        password: '',
         database: 'sigfisi'
     }
 };
