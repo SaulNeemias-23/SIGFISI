@@ -1,0 +1,92 @@
+<div class="site-section">
+    <div class="container">
+        <div class="row mb-4 align-items-center">
+            <div class="col-md-6" data-aos="fade-up">
+
+                <h2>{{evento.titulo}}</h2>
+                <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam necessitatibus incidunt ut officiis explicabo inventore.</p> -->
+
+            </div>
+
+
+        </div>
+    </div>
+
+    
+    <div class="site-section pb-0">
+        <div class="container">
+
+        <form [formGroup]="eventoForm">
+            <div class="row align-items-stretch">
+                <div class="col-md-8" data-aos="fade-up">
+                    <img [src]="evento.imagen" alt="Image" class="img-fluid">
+                </div>
+                <div class="col-md-3 ml-auto" data-aos="fade-up" data-aos-delay="100">
+                    <div class="sticky-content">
+
+                        <h4 class="h4 mb-3">Expositor</h4>
+                        <ul class="list-unstyled list-line mb-5">
+                            <li>{{evento.nom_expositor}} {{evento.ape_expositor}}</li>
+                        </ul>
+
+                        <h3 class="h3">Descripción</h3>
+                        <!-- <p class="mb-4"><span class="text-muted">Desciption</span></p>
+                         -->
+
+                        <!--<div class="mb-5">
+                            <p>{{evento.descripcion}}</p>
+
+                        </div>-->
+
+                        <div class="form-group">
+                            <label><b>Descripcion</b></label>
+                            <textarea rows="3" type="text" name="descripcion" [(ngModel)]="evento.descripcion" formControlName="descripcion" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.descripcion.errors }"></textarea>
+                            <div *ngIf="submitted && f.descripcion.errors" class="invalid-feedback">
+                                <div *ngIf="f.descripcion.errors.required">
+                                    Ingrese el nombre completo
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group row">
+                            <div class="col-md-8 fecha-inicio-container">
+                                <label for="fecha_inicio">Fecha</label>
+                                <input type="text" name="fecha_inicio" id="fecha_inicio" class="form-control&#x20;span12&#x20;datepicker" data-date-format="dd-mm-yyyy" style="text-align&#x3A;left" required="required" value="24-02-2020">                    </div>
+                            
+                    </div>
+
+                        <!-- <h4 class="h4 mb-3">Día</h4>
+                        <ul class="list-unstyled list-line mb-5">
+                            <li>{{evento.fecha_inicio}}</li>
+                        </ul> -->
+
+                        <div class="form-group col-md-12">
+                            <label class="col-md-8 control-label" for="aula"><b>Lugar</b></label>
+                            <div class="col-md-12">
+                              <select id="aula" name="aula" class="form-control">
+                                <option value="1">Aula Magna</option>
+                                <option value="2">Auditorio</option>
+                                <option value="3">Laboratorio 3</option>
+                                <option value="4">Aula 102 - Pabellón Nuevo</option>
+                                <option value="5">Aula 209 - Pabellón Antiguo</option>
+                              </select>
+                            </div>
+                          </div>
+
+                        <!-- <h4 class="h4 mb-3">Lugar</h4>
+                        <ul class="list-unstyled list-line mb-5">
+                            <li>{{evento.lugar}}</li>
+                        </ul> -->
+
+                        <button type="button" class="btn btn-success"  (click)="editarEvento()">Guardar</button>
+
+
+                    </div>
+                </div>
+            </div>
+        </form>
+        </div>
+        
+    </div>
+</div>
+  

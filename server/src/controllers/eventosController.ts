@@ -49,13 +49,13 @@ class EventosController {
 
     public async update(req: Request ,res: Response): Promise<void> {
         const { id } = req.params;
-        await db.query('UPDATE eventos set ? WHERE id =?', [req.body, id]);
+        await db.query('UPDATE eventos set ? WHERE id_evento = ?', [req.body, id]);
         res.json({message: 'El evento fue actualizado'});
     }
 
     public async delete(req: Request ,res: Response): Promise<void>{
         const { id } = req.params;
-        const eventos = await db.query('DELETE * FROM eventos WHERE id = ?', [id]);
+        //const eventos = await db.query('DELETE * FROM eventos WHERE id = ?', [id]);
         res.json({message: 'El evento fue eliminado'});
     }
 
@@ -80,8 +80,15 @@ class EventosController {
 
     public async actualizarEvento(req: Request, res: Response): Promise<void>{
         const {id} = req.params;
-        const eventos = await db.query('UPDATE evento set ? WHERE  id=?', [id]);
+        try{
+            console.log('id::::'+id);
+        const eventos = await db.query('UPDATE evento set ? WHERE  id_evento=?', [id]);
+        
         res.json({message: 'El evento fue actualizado'});
+        } catch(err) {
+            res.json({message: 'Error: '+err.message});
+
+        }
     }
     
 }

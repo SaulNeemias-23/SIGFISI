@@ -10,6 +10,7 @@ import { LoginComponent } from './components/login/login.component';
 import { TipoeventoComponent } from './components/tipoevento/tipoevento.component';
 import { CursoComponent } from './components/curso/curso.component';
 import { TallerComponent } from './components/taller/taller.component';
+import { ReprogramarComponent } from './components/reprogramar/reprogramar.component';
 
 
 const routes: Routes = [
@@ -53,7 +54,13 @@ const routes: Routes = [
   {
     path: 'solicitudes',
     component: SolicitudesComponent
+  },
+
+  {
+    path: 'eventos/:id/edit',
+    component: ReprogramarComponent
   }
+
 ];
 
 @NgModule({

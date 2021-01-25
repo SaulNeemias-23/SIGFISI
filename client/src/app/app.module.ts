@@ -21,6 +21,8 @@ import { TipoeventoComponent } from './components/tipoevento/tipoevento.componen
 import { CursoComponent } from './components/curso/curso.component';
 import { TallerComponent } from './components/taller/taller.component';
 import { PruebaComponent } from './components/prueba/prueba.component';
+import { ReprogramarComponent } from './components/reprogramar/reprogramar.component';
+
 
 @NgModule({
   declarations: [
@@ -37,7 +39,8 @@ import { PruebaComponent } from './components/prueba/prueba.component';
     TipoeventoComponent,
     CursoComponent,
     TallerComponent,
-    PruebaComponent
+    PruebaComponent,
+    ReprogramarComponent
   ],
   imports: [
     BrowserModule,
