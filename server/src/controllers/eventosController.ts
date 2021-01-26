@@ -49,13 +49,13 @@ class EventosController {
 
     public async update(req: Request ,res: Response): Promise<void> {
         const { id } = req.params;
-        await db.query('UPDATE eventos set ? WHERE id =?', [req.body, id]);
+        await db.query('UPDATE eventos set ? WHERE id_evento = ?', [req.body, id]);
         res.json({message: 'El evento fue actualizado'});
     }
 
     public async delete(req: Request ,res: Response): Promise<void>{
         const { id } = req.params;
-        const eventos = await db.query('DELETE * FROM eventos WHERE id = ?', [id]);
+        //const eventos = await db.query('DELETE * FROM eventos WHERE id = ?', [id]);
         res.json({message: 'El evento fue eliminado'});
     }
 
@@ -76,6 +76,19 @@ class EventosController {
     public async solicitudes(req: Request ,res: Response){
         const eventos = await db.query('SELECT id_evento, titulo, descripcion, imagen, categoria, e.nom_expositor, e.ape_expositor, fecha_inicio, lugar, estado, e.id_solicitud FROM eventos e INNER JOIN aulas a ON a.id_aula = e.id_aula INNER JOIN conferencias c on e.id_conferencia = c.id_conferencia INNER JOIN solicitudes s ON e.id_solicitud = s.id_solicitud WHERE estado = "proceso"');
         res.json(eventos);
+    }
+
+    public async actualizarEvento(req: Request, res: Response): Promise<void>{
+        const {id} = req.params;
+        try{
+            console.log('id::::'+id);
+        const eventos = await db.query('UPDATE evento set ? WHERE  id_evento=?', [id]);
+        
+        res.json({message: 'El evento fue actualizado'});
+        } catch(err) {
+            res.json({message: 'Error: '+err.message});
+
+        }
     }
     
 }

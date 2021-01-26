@@ -3,19 +3,18 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var express_1 = require("express");
-var usuariosController_1 = __importDefault(require("../controllers/usuariosController"));
-var UsuariosRoutes = /** @class */ (function () {
-    function UsuariosRoutes() {
+const express_1 = require("express");
+const usuariosController_1 = __importDefault(require("../controllers/usuariosController"));
+class UsuariosRoutes {
+    constructor() {
         this.router = express_1.Router();
         this.config();
     }
-    UsuariosRoutes.prototype.config = function () {
+    config() {
         this.router.get('/', usuariosController_1.default.index);
         // this.router.post('/', usuariosController.create);
-    };
-    return UsuariosRoutes;
-}());
-var usuariosRoutes = new UsuariosRoutes();
+    }
+}
+const usuariosRoutes = new UsuariosRoutes();
 exports.default = usuariosRoutes.router;
 //# sourceMappingURL=usuariosRoutes.js.map
